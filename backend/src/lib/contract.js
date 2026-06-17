@@ -185,6 +185,13 @@ export async function getServiceCount() {
   }
 }
 
+/**
+ * Update a service's reputation on-chain and record the change history.
+ * @param {number} id - The ID of the service to update
+ * @param {boolean} positive - Whether to increase (true) or decrease (false) reputation by 1
+ * @returns {Promise<number>} The new reputation value
+ * @throws {Error} If the contract call fails
+ */
 export async function updateReputation(id, positive) {
   try {
     const current = await getService(id);
